@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<title>PocketBank</title>
+
+<style>
+*{box-sizing:border-box}
+
+:root{
+ --bg:#f4f5f7;
+ --card:#fff;
+ --text:#111318;
+ --muted:#737984;
+ --line:#e5e7eb;
+ --accent:#625ee8;
+ --green:#20a464;
+ --red:#e34d59;
+}
+
+body.dark{
+ --bg:#090a0e;
+ --card:#15171d;
+ --text:#f5f6f8;
+ --muted:#9297a3;
+ --line:#282b33;
+}
+
+body{
+ margin:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
+ -webkit-tap-highlight-color:transparent;
+}
+
+button,input,select{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
+
+.app{
+ max-width:520px;
+ min-height:100vh;
+ margin:auto;
+ padding-bottom:90px;
+}
+
+header{
+ padding:24px 20px 12px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+}
+
+.brand{
+ font-size:24px;
+ font-weight:900;
+ letter-spacing:-1px;
+}
+
+.iconbtn{
+ width:42px;
+ height:42px;
+ border:0;
+ border-radius:14px;
+ background:var(--card);
+ color:var(--text);
+ box-shadow:0 3px 15px #00000012;
+}
+
+.page{padding:0 18px}
+
+.hello{margin-top:8px}
+.hello p{margin:0;color:var(--muted)}
+.hello h1{
+ margin:4px 0 16px;
+ font-size:30px;
+ letter-spacing:-1px;
+}
+
+.card{
+ background:var(--card);
+ border:1px solid var(--line);
+ border-radius:22px;
+ padding:20px;
+ margin:12px 0;
+}
+
+.bankcard{
+ min-height:220px;
+ color:white;
+ border:0;
+ padding:24px;
+ position:relative;
+ overflow:hidden;
+ background:linear-gradient(135deg,#15161c,#343644 55%,#6c6eea);
+ box-shadow:0 18px 40px #00000025;
+}
+
+.bankcard:after{
+ content:"";
+ position:absolute;
+ width:240px;
+ height:240px;
+ border-radius:50%;
+ right:-110px;
+ top:-100px;
+ background:#ffffff12;
+}
+
+.chip{
+ width:45px;
+ height:32px;
+ border-radius:8px;
+ background:linear-gradient(135deg,#ddd,#777);
+ margin:22px 0;
+}
+
+.cardnumber{
+ font-size:20px;
+ letter-spacing:3px;
+ margin:8px 0;
+}
+
+.cardbottom{
+ display:flex;
+ justify-content:space-between;
+ align-items:end;
+}
+
+.small{
+ font-size:11px;
+ opacity:.7;
+}
+
+.cardbalance{
+ font-size:25px;
+ font-weight:900;
+}
+
+.balanceLabel{
+ color:var(--muted);
+ font-size:13px;
+}
+
+.balance{
+ font-size:34px;
+ font-weight:900;
+ letter-spacing:-1.5px;
+ margin:5px 0;
+}
+
+.grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+}
+
+.stat{
+ background:var(--card);
+ border:1px solid var(--line);
+ border-radius:19px;
+ padding:16px;
+}
+
+.stat span{
+ display:block;
+ color:var(--muted);
+ font-size:12px;
+}
+
+.stat strong{
+ display:block;
+ font-size:20px;
+ margin-top:6px;
+}
+
+.sectionTitle{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin:25px 2px 10px;
+}
+
+.sectionTitle h2{
+ margin:0;
+ font-size:19px;
+}
+
+.sectionTitle button{
+ border:0;
+ background:none;
+ color:var(--accent);
+ font-weight:800;
+}
+
+.action{
+ width:100%;
+ border:0;
+ border-radius:15px;
+ padding:14px;
+ background:var(--accent);
+ color:white;
+ font-weight:800;
+}
+
+.secondary{
+ background:var(--bg);
+ color:var(--text);
+ border:1px solid var(--line);
+}
+
+.asset{
+ display:flex;
+ align-items:center;
+ gap:12px;
+ padding:14px;
+}
+
+.assetIcon{
+ width:44px;
+ height:44px;
+ border-radius:14px;
+ display:grid;
+ place-items:center;
+ background:var(--bg);
+ font-size:20px;
+ flex-shrink:0;
+}
+
+.assetInfo{
+ flex:1;
+ min-width:0;
+}
+
+.assetInfo strong{
+ display:block;
+}
+
+.assetInfo span{
+ display:block;
+ color:var(--muted);
+ font-size:12px;
+ margin-top:3px;
+}
+
+.price{
+ text-align:right;
+}
+
+.price strong{
+ display:block;
+}
+
+.up{color:var(--green)}
+.down{color:var(--red)}
+
+.news{
+ border-left:4px solid var(--accent);
+}
+
+.news.good{border-left-color:var(--green)}
+.news.bad{border-left-color:var(--red)}
+
+.newsTitle{
+ font-weight:900;
+ margin-bottom:6px;
+}
+
+.newsText{
+ color:var(--muted);
+ font-size:13px;
+ line-height:1.4;
+}
+
+.bottom{
+ position:fixed;
+ bottom:0;
+ left:50%;
+ transform:translateX(-50%);
+ width:min(520px,100%);
+ height:74px;
+ background:var(--card);
+ border-top:1px solid var(--line);
+ display:flex;
+ z-index:20;
+}
+
+.nav{
+ flex:1;
+ border:0;
+ background:none;
+ color:var(--muted);
+ font-size:11px;
+}
+
+.nav.active{
+ color:var(--accent);
+ font-weight:800;
+}
+
+.nav div{
+ font-size:21px;
+ margin-bottom:3px;
+}
+
+.modal{
+ position:fixed;
+ inset:0;
+ background:#0008;
+ z-index:50;
+ display:flex;
+ align-items:end;
+}
+
+.modalBox{
+ width:100%;
+ max-width:520px;
+ margin:auto;
+ background:var(--card);
+ border-radius:26px 26px 0 0;
+ padding:22px;
+ max-height:90vh;
+ overflow:auto;
+}
+
+.close{
+ float:right;
+ border:0;
+ background:var(--bg);
+ color:var(--text);
+ border-radius:12px;
+ padding:8px 11px;
+}
+
+input,select{
+ width:100%;
+ border:1px solid var(--line);
+ background:var(--card);
+ color:var(--text);
+ border-radius:14px;
+ padding:14px;
+ outline:none;
+}
+
+label{
+ display:block;
+ color:var(--muted);
+ font-size:13px;
+ margin:14px 0 6px;
+}
+
+.progress{
+ height:8px;
+ background:var(--bg);
+ border-radius:10px;
+ overflow:hidden;
+}
+
+.progress i{
+ display:block;
+ height:100%;
+ background:var(--accent);
+}
+
+.login{
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ padding:25px;
+}
+
+.loginBox{
+ width:100%;
+ max-width:500px;
+ margin:auto;
+}
+
+.logo{
+ font-size:44px;
+ font-weight:900;
+ letter-spacing:-3px;
+}
+
+.muted{color:var(--muted)}
+
+.empty{
+ text-align:center;
+ padding:28px;
+ color:var(--muted);
+}
+
+.historyItem{
+ padding:13px 0;
+ border-bottom:1px solid var(--line);
+}
+
+.historyItem:last-child{border-bottom:0}
+
+.historyItem strong{display:block}
+.historyItem span{
+ color:var(--muted);
+ font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- GİRİŞ -->
+
+<div id="login" class="login">
+ <div class="loginBox">
+
+  <div class="logo">PocketBank</div>
+  <p class="muted">Kendi finans dünyanı yönet.</p>
+
+  <label>Kullanıcı adı</label>
+  <input id="usernameInput" placeholder="Örn. Atakan">
+
+  <label>Başlangıç bakiyesi</label>
+  <input value="₺100.000" disabled>
+
+  <br><br>
+
+  <button class="action" onclick="startBank()">
+   PocketBank'a Başla
+  </button>
+
+ </div>
+</div>
+
+
+<!-- UYGULAMA -->
+
+<div id="app" class="app hidden">
+
+<header>
+ <div class="brand">PocketBank</div>
+ <button class="iconbtn" onclick="toggleDark()">◐</button>
+</header>
+
+
+<!-- ANA SAYFA -->
+
+<main id="home" class="page">
+
+ <div class="hello">
+  <p>Hoş geldin</p>
+  <h1 id="helloName">Kullanıcı</h1>
+ </div>
+
+ <div class="bankcard">
+
+  <div style="font-weight:900">
+   POCKETBANK
+  </div>
+
+  <div class="chip"></div>
+
+  <div class="cardnumber">
+   •••• •••• •••• 4821
+  </div>
+
+  <div class="cardbottom">
+
+   <div>
+    <div class="small">KART SAHİBİ</div>
+    <div id="cardName">KULLANICI</div>
+   </div>
+
+   <div style="text-align:right">
+    <div class="small">BAKİYE</div>
+    <div class="cardbalance" id="cardBalance">
+     ₺100.000
+    </div>
+   </div>
+
+  </div>
+ </div>
+
+
+ <div class="card">
+
+  <div class="balanceLabel">
+   Toplam kullanılabilir bakiye
+  </div>
+
+  <div class="balance" id="balance">
+   ₺100.000
+  </div>
+
+  <div id="totalProfit" class="up">
+   +₺0 kâr
+  </div>
+
+ </div>
+
+
+ <div class="grid">
+
+  <div class="stat">
+   <span>Portföy</span>
+   <strong id="portfolioValue">₺0</strong>
+  </div>
+
+  <div class="stat">
+   <span>Borç</span>
+   <strong id="debt">₺0</strong>
+  </div>
+
+ </div>
+
+
+ <div class="sectionTitle">
+  <h2>Hızlı İşlemler</h2>
+ </div>
+
+ <div class="grid">
+
+  <button class="action" onclick="openMarket()">
+   Yatırım
+  </button>
+
+  <button class="action secondary" onclick="openLoan()">
+   Kredi
+  </button>
+
+ </div>
+
+
+ <div class="sectionTitle">
+  <h2>Son Haberler</h2>
+  <button onclick="openNews()">Tümü</button>
+ </div>
+
+ <div id="latestNews"></div>
+
+</main>
+
+
+<!-- PİYASA -->
+
+<main id="market" class="page hidden">
+
+ <div class="sectionTitle">
+  <h2>Piyasalar</h2>
+ </div>
+
+ <div class="card">
+
+  <div class="balanceLabel">
+   Kullanılabilir bakiye
+  </div>
+
+  <div class="balance" id="marketBalance">
+   ₺100.000
+  </div>
+
+ </div>
+
+ <div id="assets"></div>
+
+</main>
+
+
+<!-- PORTFÖY -->
+
+<main id="portfolio" class="page hidden">
+
+ <div class="sectionTitle">
+  <h2>Portföyüm</h2>
+ </div>
+
+ <div class="card">
+
+  <div class="balanceLabel">
+   Toplam portföy değeri
+  </div>
+
+  <div class="balance" id="portValue">
+   ₺0
+  </div>
+
+  <div id="portProfit" class="muted">
+   Henüz yatırım yok
+  </div>
+
+ </div>
+
+ <div id="holdings"></div>
+
+</main>
+
+
+<!-- HABERLER -->
+
+<main id="news" class="page hidden">
+
+ <div class="sectionTitle">
+  <h2>Piyasa Haberleri</h2>
+ </div>
+
+ <div id="newsList"></div>
+
+</main>
+
+
+<!-- PROFİL -->
+
+<main id="profile" class="page hidden">
+
+ <div class="sectionTitle">
+  <h2>Profil</h2>
+ </div>
+
+ <div class="card">
+
+  <div class="balanceLabel">Kullanıcı</div>
+
+  <h2 id="profileName"></h2>
+
+  <p class="muted">
+   PocketBank simülasyon hesabı
+  </p>
+
+ </div>
+
+
+ <div class="card">
+
+  <h3>Finansal Durum</h3>
+
+  <p>
+   Bakiye:
+   <b id="profileBalance"></b>
+  </p>
+
+  <p>
+   Portföy:
+   <b id="profilePortfolio"></b>
+  </p>
+
+  <p>
+   Borç:
+   <b id="profileDebt"></b>
+  </p>
+
+  <p>
+   Kredi puanı:
+   <b id="creditScore">750</b>
+  </p>
+
+ </div>
+
+
+ <div class="card">
+
+  <h3>Son İşlemler</h3>
+
+  <div id="history"></div>
+
+ </div>
+
+
+ <button class="action secondary" onclick="resetGame()">
+  Hesabı Sıfırla
+ </button>
+
+</main>
+
+
+<!-- NAV -->
+
+<nav class="bottom">
+
+ <button class="nav active" onclick="showPage('home',this)">
+  <div>⌂</div>
+  Ana Sayfa
+ </button>
+
+ <button class="nav" onclick="showPage('market',this)">
+  <div>↗</div>
+  Piyasa
+ </button>
+
+ <button class="nav" onclick="showPage('portfolio',this)">
+  <div>◫</div>
+  Portföy
+ </button>
+
+ <button class="nav" onclick="showPage('news',this)">
+  <div>◉</div>
+  Haberler
+ </button>
+
+ <button class="nav" onclick="showPage('profile',this)">
+  <div>●</div>
+  Profil
+ </button>
+
+</nav>
+
+</div>
+
+
+<!-- MODAL -->
+
+<div id="modal" class="modal hidden">
+
+ <div class="modalBox">
+
+  <button class="close" onclick="closeModal()">✕</button>
+
+  <div id="modalContent"></div>
+
+ </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   VARLIKLAR
+========================= */
+
+const defaultAssets=[
+ {id:"THYAO",name:"Türk Hava Yolları",type:"Hisse",icon:"✈️",price:320},
+ {id:"GARAN",name:"Garanti BBVA",type:"Hisse",icon:"🏦",price:145},
+ {id:"ASELS",name:"ASELSAN",type:"Hisse",icon:"🛡️",price:185},
+ {id:"SISE",name:"Şişecam",type:"Hisse",icon:"🏭",price:48},
+ {id:"TUPRS",name:"Tüpraş",type:"Hisse",icon:"⛽",price:165},
+ {id:"BIMAS",name:"BİM",type:"Hisse",icon:"🛒",price:510},
+
+ {id:"BTC",name:"Bitcoin",type:"Coin",icon:"₿",price:3850000},
+ {id:"ETH",name:"Ethereum",type:"Coin",icon:"◆",price:145000},
+ {id:"SOL",name:"Solana",type:"Coin",icon:"◎",price:6200},
+ {id:"XRP",name:"XRP",type:"Coin",icon:"✕",price:115},
+ {id:"ADA",name:"Cardano",type:"Coin",icon:"◈",price:32},
+
+ {id:"ALTIN",name:"Altın",type:"Maden",icon:"🥇",price:4850},
+ {id:"GUMUS",name:"Gümüş",type:"Maden",icon:"⚪",price:62},
+ {id:"BAKIR",name:"Bakır",type:"Maden",icon:"🟤",price:410},
+ {id:"PLATIN",name:"Platin",type:"Maden",icon:"⬜",price:1900}
+];
+
+
+/* =========================
+   DURUM
+========================= */
+
+let state=JSON.parse(localStorage.getItem("pocketbank_v2")) || {
+
+ username:"",
+ balance:100000,
+ debt:0,
+ creditScore:750,
+
+ portfolio:{},
+
+ history:[],
+ news:[],
+
+ assets:JSON.parse(JSON.stringify(defaultAssets)),
+
+ dark:false
+};
+
+
+let assets=state.assets || JSON.parse(JSON.stringify(defaultAssets));
+
+
+/* =========================
+   YARDIMCI
+========================= */
+
+function money(n){
+ return "₺"+Math.round(Number(n)||0).toLocaleString("tr-TR");
+}
+
+function save(){
+ state.assets=assets;
+ localStorage.setItem("pocketbank_v2",JSON.stringify(state));
+}
+
+
+/* =========================
+   GİRİŞ
+========================= */
+
+function startBank(){
+
+ const name=document
+  .getElementById("usernameInput")
+  .value
+  .trim();
+
+ if(!name){
+  alert("Bir kullanıcı adı yaz.");
+  return;
+ }
+
+ state.username=name;
+
+ save();
+
+ document
+  .getElementById("login")
+  .classList.add("hidden");
+
+ document
+  .getElementById("app")
+  .classList.remove("hidden");
+
+ update();
+}
+
+
+/* =========================
+   GÜNCELLE
+========================= */
+
+function update(){
+
+ document.getElementById("helloName").textContent=
+  state.username;
+
+ document.getElementById("cardName").textContent=
+  state.username.toUpperCase();
+
+ document.getElementById("profileName").textContent=
+  state.username;
+
+ document.getElementById("balance").textContent=
+  money(state.balance);
+
+ document.getElementById("cardBalance").textContent=
+  money(state.balance);
+
+ document.getElementById("marketBalance").textContent=
+  money(state.balance);
+
+ document.getElementById("debt").textContent=
+  money(state.debt);
+
+ document.getElementById("profileBalance").textContent=
+  money(state.balance);
+
+ document.getElementById("profileDebt").textContent=
+  money(state.debt);
+
+ document.getElementById("creditScore").textContent=
+  state.creditScore;
+
+
+ const pv=portfolioValue();
+
+ document.getElementById("portfolioValue").textContent=
+  money(pv);
+
+ document.getElementById("portValue").textContent=
+  money(pv);
+
+
+ renderAssets();
+ renderHoldings();
+ renderNews();
+ renderHistory();
+}
+
+
+/* =========================
+   PORTFÖY DEĞERİ
+========================= */
+
+function portfolioValue(){
+
+ let total=0;
+
+ Object.keys(state.portfolio).forEach(id=>{
+
+  const h=state.portfolio[id];
+  const a=assets.find(x=>x.id===id);
+
+  if(a && h && h.qty>0){
+   total+=h.qty*a.price;
+  }
+
+ });
+
+ return total;
+}
+
+
+/* =========================
+   SAYFA
+========================= */
+
+function showPage(page,button){
+
+ document
+  .querySelectorAll("main")
+  .forEach(x=>x.classList.add("hidden"));
+
+ document
+  .getElementById(page)
+  .classList.remove("hidden");
+
+ document
+  .querySelectorAll(".nav")
+  .forEach(x=>x.classList.remove("active"));
+
+ if(button){
+  button.classList.add("active");
+ }
+
+ update();
+}
+
+function openMarket(){
+ showPage(
+  "market",
+  document.querySelectorAll(".nav")[1]
+ );
+}
+
+function openNews(){
+ showPage(
+  "news",
+  document.querySelectorAll(".nav")[3]
+ );
+}
+
+
+/* =========================
+   PİYASA
+========================= */
+
+function renderAssets(){
+
+ const box=document.getElementById("assets");
+
+ box.innerHTML="";
+
+ assets.forEach(a=>{
+
+  if(typeof a.change!=="number")
+   a.change=0;
+
+  const cls=a.change>=0?"up":"down";
+
+  box.innerHTML+=`
+
+   <div class="card asset">
+
+    <div class="assetIcon">
+     ${a.icon}
+    </div>
+
+    <div class="assetInfo">
+
+     <strong>${a.id}</strong>
+
+     <span>
+      ${a.name} · ${a.type}
+     </span>
+
+    </div>
+
+    <div class="price">
+
+     <strong>
+      ${money(a.price)}
+     </strong>
+
+     <span class="${cls}">
+      ${a.change>=0?"+":""}${a.change.toFixed(2)}%
+     </span>
+
+    </div>
+
+    <button
+     class="iconbtn"
+     onclick="trade('${a.id}')">
+     ↔
+    </button>
+
+   </div>
+  `;
+ });
+}
+
+
+/* =========================
+   AL / SAT
+========================= */
+
+function trade(id){
+
+ const a=assets.find(x=>x.id===id);
+
+ openModal(`
+
+  <h2>${a.icon} ${a.name}</h2>
+
+  <p class="muted">
+   ${a.id} · ${a.type}
+  </p>
+
+  <div class="card">
+
+   <div class="balanceLabel">
+    Güncel fiyat
+   </div>
+
+   <div class="balance">
+    ${money(a.price)}
+   </div>
+
+  </div>
+
+  <label>İşlem</label>
+
+  <select id="tradeSide">
+   <option value="buy">Satın Al</option>
+   <option value="sell">Sat</option>
+  </select>
+
+  <label>Adet</label>
+
+  <input
+   id="tradeQty"
+   type="number"
+   min="1"
+   value="1">
+
+  <br><br>
+
+  <button
+   class="action"
+   onclick="executeTrade('${id}')">
+
+   İşlemi Gerçekleştir
+
+  </button>
+ `);
+}
+
+
+function executeTrade(id){
+
+ const a=assets.find(x=>x.id===id);
+
+ const side=
+  document.getElementById("tradeSide").value;
+
+ const qty=Math.floor(
+  Number(document.getElementById("tradeQty").value)
+ );
+
+ if(!qty || qty<1){
+  alert("Geçerli bir adet gir.");
+  return;
+ }
+
+ const total=a.price*qty;
+
+
+ if(side==="buy"){
+
+  if(total>state.balance){
+   alert("Yeterli bakiyen yok.");
+   return;
+  }
+
+  state.balance-=total;
+
+  if(!state.portfolio[id]){
+   state.portfolio[id]={
+    qty:0,
+    invested:0
+   };
+  }
+
+  state.portfolio[id].qty+=qty;
+  state.portfolio[id].invested+=total;
+
+  state.history.unshift({
+   date:new Date().toLocaleString("tr-TR"),
+   text:`${qty} ${id} satın alındı`,
+   amount:-total
+  });
+
+ }else{
+
+  const h=state.portfolio[id];
+
+  if(!h || h.qty<qty){
+   alert("Bu kadar varlığın yok.");
+   return;
+  }
+
+  const average=h.invested/h.qty;
+  const cost=average*qty;
+
+  h.qty-=qty;
+  h.invested-=cost;
+
+  state.balance+=total;
+
+  if(h.qty<=0){
+   delete state.portfolio[id];
+  }
+
+  state.history.unshift({
+   date:new Date().toLocaleString("tr-TR"),
+   text:`${qty} ${id} satıldı`,
+   amount:total-cost
+  });
+ }
+
+ save();
+ closeModal();
+ update();
+}
+
+
+/* =========================
+   PORTFÖY
+========================= */
+
+function renderHoldings(){
+
+ const box=document.getElementById("holdings");
+
+ box.innerHTML="";
+
+ const ids=Object.keys(state.portfolio)
+  .filter(id=>{
+
+   const h=state.portfolio[id];
+   const a=assets.find(x=>x.id===id);
+
+   return a && h && h.qty>0;
+
+  });
+
+
+ if(ids.length===0){
+
+  box.innerHTML=`
+   <div class="card empty">
+    Henüz yatırım yapmadın.
+   </div>
+  `;
+
+  document.getElementById("portProfit").textContent=
+   "Henüz yatırım yok";
+
+  return;
+ }
+
+
+ let investedTotal=0;
+ let currentTotal=0;
+
+
+ ids.forEach(id=>{
+
+  const h=state.portfolio[id];
+  const a=assets.find(x=>x.id===id);
+
+  const value=h.qty*a.price;
+  const profit=value-h.invested;
+
+  investedTotal+=h.invested;
+  currentTotal+=value;
+
+
+  box.innerHTML+=`
+
+   <div class="card asset">
+
+    <div class="assetIcon">
+     ${a.icon}
+    </div>
+
+    <div class="assetInfo">
+
+     <strong>
+      ${a.name}
+     </strong>
+
+     <span>
+      ${h.qty} adet · Ortalama ${money(h.invested/h.qty)}
+     </span>
+
+    </div>
+
+    <div class="price">
+
+     <strong>
+      ${money(value)}
+     </strong>
+
+     <span class="${profit>=0?"up":"down"}">
+      ${profit>=0?"+":""}${money(profit)}
+     </span>
+
+    </div>
+
+   </div>
+  `;
+ });
+
+
+ const profit=currentTotal-investedTotal;
+
+ document.getElementById("portProfit").innerHTML=`
+
+  <span class="${profit>=0?"up":"down"}">
+
+   ${profit>=0?"+":""}${money(profit)}
+
+   kâr/zarar
+
+  </span>
+ `;
+}
+
+
+/* =========================
+   HABERLER
+========================= */
+
+const newsTemplates=[
+
+ {
+  title:"THY güçlü finansal sonuç açıkladı",
+  text:"Şirketin beklentilerin üzerindeki kârlılığı yatırımcıların ilgisini artırdı.",
+  targets:["THYAO"],
+  impact:1
+ },
+
+ {
+  title:"Havacılık sektöründe maliyet baskısı",
+  text:"Yakıt ve işletme maliyetlerindeki artış sektörü baskıladı.",
+  targets:["THYAO"],
+  impact:-1
+ },
+
+ {
+  title:"Bankacılık sektöründe olumlu beklenti",
+  text:"Finans sektörüne yönelik beklentiler güçlendi.",
+  targets:["GARAN"],
+  impact:1
+ },
+
+ {
+  title:"Savunma sanayi siparişi açıklandı",
+  text:"Yeni sipariş haberi savunma şirketlerine ilgiyi artırdı.",
+  targets:["ASELS"],
+  impact:1
+ },
+
+ {
+  title:"Bitcoin yeniden yükselişte",
+  text:"Kripto piyasasında alım iştahı güçlendi.",
+  targets:["BTC"],
+  impact:1
+ },
+
+ {
+  title:"Kripto piyasasında risk iştahı düştü",
+  text:"Yatırımcıların temkinli hareket etmesi kripto varlıkları baskıladı.",
+  targets:["BTC","ETH","SOL"],
+  impact:-1
+ },
+
+ {
+  title:"Ethereum ekosisteminde gelişme",
+  text:"Yeni ağ gelişmeleri Ethereum için olumlu karşılandı.",
+  targets:["ETH"],
+  impact:1
+ },
+
+ {
+  title:"Altın güvenli liman talebiyle yükseldi",
+  text:"Küresel belirsizlikler değerli metallere ilgiyi artırdı.",
+  targets:["ALTIN"],
+  impact:1
+ },
+
+ {
+  title:"Sanayi metalleri zayıfladı",
+  text:"Küresel talep endişeleri sanayi metallerinde satış getirdi.",
+  targets:["BAKIR","GUMUS"],
+  impact:-1
+ },
+
+ {
+  title:"Tüpraş enerji piyasasında dikkat çekti",
+  text:"Enerji piyasasındaki gelişmeler şirket hisselerine yansıdı.",
+  targets:["TUPRS"],
+  impact:1
+ },
+
+ {
+  title:"Perakende sektöründe hareketlilik",
+  text:"Tüketici harcamalarındaki değişim perakende hisselerini etkiledi.",
+  targets:["BIMAS"],
+  impact:1
+ }
+
+];
+
+
+function generateNews(){
+
+ const n=
+  newsTemplates[
+   Math.floor(Math.random()*newsTemplates.length)
+  ];
+
+
+ n.targets.forEach(id=>{
+
+  const a=assets.find(x=>x.id===id);
+
+  if(!a)return;
+
+  const move=
+   (Math.random()*2+0.5)*n.impact;
+
+  a.price=Math.max(
+   0.01,
+   a.price*(1+move/100)
+  );
+
+  a.change=move;
+
+ });
+
+
+ state.news.unshift({
+
+  title:n.title,
+
+  text:n.text,
+
+  impact:n.impact,
+
+  time:new Date().toLocaleTimeString(
+   "tr-TR",
+   {
+    hour:"2-digit",
+    minute:"2-digit"
+   }
+  )
+
+ });
+
+
+ if(state.news.length>30){
+  state.news.pop();
+ }
+
+ save();
+ update();
+}
+
+
+function renderNews(){
+
+ const latest=
+  document.getElementById("latestNews");
+
+ const list=
+  document.getElementById("newsList");
+
+
+ if(!state.news.length){
+
+  latest.innerHTML=`
+   <div class="card empty">
+    Henüz haber yok.
+   </div>
+  `;
+
+  list.innerHTML=`
+   <div class="card empty">
+    Piyasa haberleri bekleniyor...
+   </div>
+  `;
+
+  return;
+ }
+
+
+ list.innerHTML=
+  state.news.map(n=>`
+
+   <div class="card news ${
+    n.impact>0?"good":
+    n.impact<0?"bad":""
+   }">
+
+    <div class="newsTitle">
+     ${n.title}
+    </div>
+
+    <div class="newsText">
+     ${n.text}
+    </div>
+
+    <div class="small" style="margin-top:9px">
+     ${n.time}
+     ·
+     ${
+      n.impact>0
+       ?"Olumlu Etki"
+       :n.impact<0
+       ?"Olumsuz Etki"
+       :"Nötr"
+     }
+    </div>
+
+   </div>
+
+  `).join("");
+
+
+ latest.innerHTML=
+  state.news.slice(0,2).map(n=>`
+
+   <div class="card news ${
+    n.impact>0?"good":
+    n.impact<0?"bad":""
+   }">
+
+    <div class="newsTitle">
+     ${n.title}
+    </div>
+
+    <div class="newsText">
+     ${n.text}
+    </div>
+
+   </div>
+
+  `).join("");
+}
+
+
+/* =========================
+   İŞLEM GEÇMİŞİ
+========================= */
+
+function renderHistory(){
+
+ const box=document.getElementById("history");
+
+ if(!state.history.length){
+
+  box.innerHTML=`
+   <div class="empty">
+    Henüz işlem yapılmadı.
+   </div>
+  `;
+
+  return;
+ }
+
+
+ box.innerHTML=
+  state.history.slice(0,10).map(h=>`
+
+   <div class="historyItem">
+
+    <strong>
+     ${h.text}
+    </strong>
+
+    <span>
+     ${h.date}
+    </span>
+
+   </div>
+
+  `).join("");
+}
+
+
+/* =========================
+   KREDİ
+========================= */
+
+function openLoan(){
+
+ openModal(`
+
+  <h2>🏦 Kredi Merkezi</h2>
+
+  <p class="muted">
+   Sanal kredi hesabını yönet.
+  </p>
+
+  <div class="card">
+
+   <div class="balanceLabel">
+    Kredi puanı
+   </div>
+
+   <div class="balance">
+    ${state.creditScore}
+   </div>
+
+   <div class="progress">
+
+    <i style="
+     width:${Math.min(
+      100,
+      Math.max(
+       0,
+       (state.creditScore-300)/550*100
+      )
+     )}%
+    "></i>
+
+   </div>
+
+  </div>
+
+  <p>
+   Mevcut borç:
+   <b>${money(state.debt)}</b>
+  </p>
+
+  <label>Kredi tutarı</label>
+
+  <input
+   id="loanAmount"
+   type="number"
+   value="25000"
+   min="1000">
+
+  <label>Vade</label>
+
+  <select id="loanTerm">
+
+   <option value="6">6 ay</option>
+   <option value="12" selected>12 ay</option>
+   <option value="24">24 ay</option>
+   <option value="36">36 ay</option>
+
+  </select>
+
+  <label>Faiz oranı</label>
+
+  <input
+   value="3,2% aylık"
+   disabled>
+
+  <br><br>
+
+  <button class="action" onclick="takeLoan()">
+   Krediyi Çek
+  </button>
+
+ `);
+}
+
+
+function takeLoan(){
+
+ const amount=
+  Number(document.getElementById("loanAmount").value);
+
+ const term=
+  Number(document.getElementById("loanTerm").value);
+
+
+ if(amount<1000){
+  alert("Minimum kredi ₺1.000.");
+  return;
+ }
+
+
+ if(state.debt>=500000){
+  alert("Kredi limitini aştın.");
+  return;
+ }
+
+
+ const interest=.032;
+
+ const monthly=
+  amount*
+  (
+   interest*Math.pow(1+interest,term)
+  )/
+  (
+   Math.pow(1+interest,term)-1
+  );
+
+ const total=monthly*term;
+
+
+ state.balance+=amount;
+ state.debt+=total;
+
+
+ state.history.unshift({
+
+  date:new Date().toLocaleString("tr-TR"),
+
+  text:`${money(amount)} kredi çekildi`,
+
+  amount:amount
+
+ });
+
+
+ state.creditScore=
+  Math.max(
+   300,
+   state.creditScore-
+   Math.min(
+    40,
+    Math.round(amount/10000)
+   )
+  );
+
+
+ save();
+ closeModal();
+ update();
+
+
+ alert(
+  `${money(amount)} kredi hesabına aktarıldı.\n\n`+
+  `Aylık taksit: ${money(monthly)}\n`+
+  `Toplam geri ödeme: ${money(total)}`
+ );
+}
+
+
+/* =========================
+   KARANLIK MOD
+========================= */
+
+function toggleDark(){
+
+ state.dark=!state.dark;
+
+ document.body.classList.toggle(
+  "dark",
+  state.dark
+ );
+
+ save();
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal(content){
+
+ document.getElementById("modalContent")
+  .innerHTML=content;
+
+ document.getElementById("modal")
+  .classList.remove("hidden");
+}
+
+
+function closeModal(){
+
+ document.getElementById("modal")
+  .classList.add("hidden");
+}
+
+
+/* =========================
+   SIFIRLA
+========================= */
+
+function resetGame(){
+
+ if(!confirm(
+  "Tüm PocketBank verilerin silinsin mi?"
+ ))return;
+
+ localStorage.removeItem("pocketbank_v2");
+
+ location.reload();
+}
+
+
+/* =========================
+   BAŞLANGIÇ
+========================= */
+
+if(state.username){
+
+ document
+  .getElementById("login")
+  .classList.add("hidden");
+
+ document
+  .getElementById("app")
+  .classList.remove("hidden");
+
+ document.body.classList.toggle(
+  "dark",
+  state.dark
+ );
+
+ update();
+
+}else{
+
+ document.body.classList.toggle(
+  "dark",
+  state.dark
+ );
+
+}
+
+
+/* =========================
+   HER DAKİKA HABER
+========================= */
+
+setInterval(
+ generateNews,
+ 60000
+);
+
+
+/* İlk haber */
+
+if(state.username && !state.news.length){
+
+ setTimeout(
+  generateNews,
+  3000
+ );
+
+}
+
+</script>
+
+</body>
+</html>
