@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0d12">
 <link rel="icon" type="image/png" href="icon.png.PNG">
- <link rel="apple-touch-icon" href="/icon.png.PNG">
+<link rel="apple-touch-icon" href="/icon.png.PNG">
 <title>PocketBank</title>
 
 <style>
@@ -471,9 +471,7 @@ label{
  align-items:center
 }
 
-.goalName{
- font-weight:800
-}
+.goalName{font-weight:800}
 
 .goalAmount{
  color:var(--muted);
@@ -520,9 +518,7 @@ label{
  font-weight:700
 }
 
-.toast.show{
- transform:translate(-50%,0)
-}
+.toast.show{transform:translate(-50%,0)}
 
 .toast small{
  display:block;
@@ -574,12 +570,9 @@ Kendi finans dünyanı yönet.
 </p>
 
 <label data-i18n="username">Kullanıcı adı</label>
-
 <input id="usernameInput" placeholder="Örn. Atakan">
 
-<label data-i18n="startingBalance">
-Başlangıç bakiyesi
-</label>
+<label data-i18n="startingBalance">Başlangıç bakiyesi</label>
 
 <div class="balanceOptions">
 
@@ -606,7 +599,6 @@ PocketBank'a Başla
 </div>
 </div>
 
-
 <div id="app" class="app hidden">
 
 <header>
@@ -614,14 +606,12 @@ PocketBank'a Başla
 <button class="iconbtn" onclick="toggleDark()">◐</button>
 </header>
 
-
 <main id="home" class="page">
 
 <div class="hello">
 <p data-i18n="hello">Merhaba</p>
 <h1 id="helloName">Kullanıcı</h1>
 </div>
-
 
 <div id="bankCard" class="bankcard">
 
@@ -631,9 +621,7 @@ PocketBank'a Başla
 
 <div id="cardNetwork" class="cardNetwork">VISA</div>
 
-<div id="cardNumber" class="cardnumber">
-•••• •••• •••• 4821
-</div>
+<div id="cardNumber" class="cardnumber">•••• •••• •••• 4821</div>
 
 <div class="cardbottom">
 
@@ -653,7 +641,6 @@ PocketBank'a Başla
 
 </div>
 
-
 <div class="card">
 
 <div class="balanceLabel" data-i18n="availableBalance">
@@ -671,7 +658,6 @@ Toplam kullanılabilir bakiye
 
 </div>
 
-
 <div class="goal">
 
 <div class="goalTop">
@@ -681,9 +667,7 @@ Toplam kullanılabilir bakiye
 <div class="goalName" id="goalName">₺250.000</div>
 </div>
 
-<div class="goalAmount" id="goalRemaining">
-₺150.000 kaldı
-</div>
+<div class="goalAmount" id="goalRemaining">₺150.000 kaldı</div>
 
 </div>
 
@@ -691,12 +675,9 @@ Toplam kullanılabilir bakiye
 <i id="goalProgress" style="width:40%"></i>
 </div>
 
-<div class="goalText" id="goalText">
-Hedefe doğru ilerliyorsun.
-</div>
+<div class="goalText" id="goalText">Hedefe doğru ilerliyorsun.</div>
 
 </div>
-
 
 <div class="grid">
 
@@ -712,38 +693,29 @@ Hedefe doğru ilerliyorsun.
 
 </div>
 
-
 <div class="sectionTitle">
 <h2 data-i18n="quickActions">Hızlı İşlemler</h2>
 </div>
 
 <div class="grid">
 
-<button class="action" onclick="openMarket()" data-i18n="invest">
-Yatırım
-</button>
+<button class="action" onclick="openMarket()" data-i18n="invest">Yatırım</button>
 
-<button class="action secondary" onclick="openLoan()" data-i18n="loan">
-Kredi
-</button>
+<button class="action secondary" onclick="openLoan()" data-i18n="loan">Kredi</button>
 
 </div>
-
 
 <div class="sectionTitle">
 
 <h2 data-i18n="latestNews">Son Haberler</h2>
 
-<button onclick="openNews()" data-i18n="all">
-Tümü
-</button>
+<button onclick="openNews()" data-i18n="all">Tümü</button>
 
 </div>
 
 <div id="latestNews"></div>
 
 </main>
-
 
 <main id="market" class="page hidden">
 
@@ -780,7 +752,6 @@ Piyasa hareketleri aktif
 
 </main>
 
-
 <main id="portfolio" class="page hidden">
 
 <div class="sectionTitle">
@@ -803,7 +774,6 @@ Toplam portföy değeri
 
 </main>
 
-
 <main id="news" class="page hidden">
 
 <div class="sectionTitle">
@@ -813,7 +783,6 @@ Toplam portföy değeri
 <div id="newsList"></div>
 
 </main>
-
 
 <main id="profile" class="page hidden">
 
@@ -832,7 +801,6 @@ PocketBank simülasyon hesabı
 </p>
 
 </div>
-
 
 <div class="card">
 
@@ -860,7 +828,6 @@ PocketBank simülasyon hesabı
 
 </div>
 
-
 <div class="card">
 
 <h3>🎯 Hedefler</h3>
@@ -868,7 +835,6 @@ PocketBank simülasyon hesabı
 <div id="profileGoals"></div>
 
 </div>
-
 
 <div class="card">
 
@@ -894,7 +860,6 @@ PocketBank simülasyon hesabı
 
 </div>
 
-
 <button class="action secondary" onclick="openQuickMode()" data-i18n="quickMode">
 Hızlı Mod
 </button>
@@ -906,7 +871,6 @@ Hesabı Sıfırla
 </button>
 
 </main>
-
 
 <nav class="bottom">
 
@@ -939,7 +903,6 @@ Hesabı Sıfırla
 
 </div>
 
-
 <div id="modal" class="modal hidden">
 
 <div class="modalBox">
@@ -952,8 +915,11 @@ Hesabı Sıfırla
 
 </div>
 
-
 <script>
+
+/* =========================================================
+   VARLIKLAR
+   ========================================================= */
 
 const defaultAssets=[
 
@@ -973,7 +939,6 @@ const defaultAssets=[
 {id:"YKBNK",name:"Yapı Kredi",type:"Hisse",icon:"🏦",price:38,change:0},
 {id:"TOASO",name:"Tofaş",type:"Hisse",icon:"🚘",price:285,change:0},
 {id:"PETKM",name:"Petkim",type:"Hisse",icon:"🧪",price:25,change:0},
-
 {id:"MGROS",name:"Migros",type:"Hisse",icon:"🛒",price:610,change:0},
 {id:"ULKER",name:"Ülker Bisküvi",type:"Hisse",icon:"🍫",price:125,change:0},
 {id:"KOZAL",name:"Koza Altın",type:"Hisse",icon:"🥇",price:92,change:0},
@@ -996,7 +961,6 @@ const defaultAssets=[
 {id:"XRP",name:"XRP",type:"Kripto",icon:"✕",price:120,change:0},
 {id:"ADA",name:"Cardano",type:"Kripto",icon:"●",price:28,change:0},
 {id:"DOGE",name:"Dogecoin",type:"Kripto",icon:"Ð",price:7.5,change:0},
-
 {id:"AVAX",name:"Avalanche",type:"Kripto",icon:"🔺",price:1100,change:0},
 {id:"LINK",name:"Chainlink",type:"Kripto",icon:"🔗",price:720,change:0},
 {id:"DOT",name:"Polkadot",type:"Kripto",icon:"●",price:210,change:0},
@@ -1018,7 +982,115 @@ const defaultAssets=[
 {id:"DOGALGAZ",name:"Doğal Gaz",type:"Emtia",icon:"🔥",price:145,change:0}
 
 ];
- 
+
+
+/* =========================================================
+   HABERLER
+   ========================================================= */
+
+const newsTemplates=[
+
+{
+title:"Garanti BBVA güçlü kâr açıkladı",
+enTitle:"Garanti BBVA reports strong profit",
+text:"Bankanın güçlü finansal sonuçları bankacılık hisselerinde alımları destekledi.",
+enText:"Strong financial results support buying in banking stocks.",
+impact:1,
+targets:["GARAN","ISCTR","AKBNK","YKBNK"]
+},
+
+{
+title:"Havacılık sektöründe yoğun talep",
+enTitle:"Strong demand in aviation sector",
+text:"Yolcu talebindeki artış havacılık hisselerine olumlu yansıdı.",
+enText:"Higher passenger demand boosts aviation stocks.",
+impact:1,
+targets:["THYAO","PGSUS","TAVHL"]
+},
+
+{
+title:"Petrol fiyatlarında sert yükseliş",
+enTitle:"Oil prices rise sharply",
+text:"Petrol fiyatlarındaki yükseliş enerji şirketlerini destekledi.",
+enText:"Rising oil prices support energy companies.",
+impact:1,
+targets:["PETROL","TUPRS","PETKM"]
+},
+
+{
+title:"Sanayi hisselerinde satış baskısı",
+enTitle:"Selling pressure in industrial stocks",
+text:"Sanayi sektöründe yatırımcıların kâr satışları görüldü.",
+enText:"Profit-taking hits industrial stocks.",
+impact:-1,
+targets:["EREGL","KRDMD","ASELS","FROTO","BRSAN"]
+},
+
+{
+title:"Kripto piyasasında yükseliş",
+enTitle:"Crypto market rallies",
+text:"Kripto varlıklarda genel risk iştahı arttı.",
+enText:"Risk appetite rises across crypto assets.",
+impact:1,
+targets:[
+"BTC","ETH","SOL","BNB","XRP","ADA","DOGE",
+"AVAX","LINK","DOT","LTC","TRX","SHIB",
+"ATOM","UNI","NEAR","APT"
+]
+},
+
+{
+title:"Kripto piyasasında satış dalgası",
+enTitle:"Crypto market sell-off",
+text:"Kripto piyasasında kısa vadeli satış baskısı oluştu.",
+enText:"Short-term selling pressure hits crypto markets.",
+impact:-1,
+targets:[
+"BTC","ETH","SOL","BNB","XRP","ADA","DOGE",
+"AVAX","LINK","DOT","LTC","TRX","SHIB",
+"ATOM","UNI","NEAR","APT"
+]
+},
+
+{
+title:"Altın ve değerli metaller güçlendi",
+enTitle:"Gold and precious metals strengthen",
+text:"Güvenli liman talebi değerli metalleri destekledi.",
+enText:"Safe-haven demand supports precious metals.",
+impact:1,
+targets:["ALTIN","GUMUS","PLATIN","PALADYUM"]
+},
+
+{
+title:"Piyasalarda risk iştahı azaldı",
+enTitle:"Risk appetite falls",
+text:"Küresel risk iştahındaki düşüş birçok varlıkta satış baskısı oluşturdu.",
+enText:"Lower global risk appetite creates selling pressure across assets.",
+impact:-1,
+targets:[
+"THYAO","GARAN","ISCTR","ASELS","SISE","TUPRS",
+"BIMAS","FROTO","EREGL","KCHOL","SAHOL","TCELL",
+"AKBNK","YKBNK","TOASO","PETKM","MGROS","ULKER",
+"KOZAL","ENKAI","TTKOM","CCOLA","DOAS","PGSUS",
+"KRDMD","OYAKC","EKGYO","ASTOR","TAVHL","BRSAN"
+]
+},
+
+{
+title:"Emtia piyasasında hareketlilik",
+enTitle:"Commodity markets turn volatile",
+text:"Emtia piyasalarında fiyat hareketleri hızlandı.",
+enText:"Commodity price movements accelerate.",
+impact:-1,
+targets:["BAKIR","PETROL","DOGALGAZ"]
+}
+
+];
+
+
+/* =========================================================
+   ÇEVİRİLER
+   ========================================================= */
 
 const translations={
 
@@ -1107,9 +1179,37 @@ commodity:"Commodities"
 };
 
 
+/* =========================================================
+   KAYIT SİSTEMİ
+   ========================================================= */
+
+let state;
+
 const saved=localStorage.getItem("pocketbank");
 
-let state=saved?JSON.parse(saved):{
+if(saved){
+
+try{
+
+state=JSON.parse(saved);
+
+if(!state||typeof state!=="object")
+throw new Error("Invalid state");
+
+}
+catch(error){
+
+console.warn("PocketBank kayıt dosyası bozuk. Yeni kayıt oluşturuluyor.",error);
+
+state=null;
+
+}
+
+}
+
+if(!state){
+
+state={
 username:"",
 balance:100000,
 startBalance:100000,
@@ -1127,13 +1227,52 @@ goalIndex:0,
 completedGoals:[]
 };
 
-let assets=state.assets?.length
+}
+
+
+/* =========================================================
+   EKSİK ŞİRKETLERİ GERİ GETİR
+   ========================================================= */
+
+let assets=JSON.parse(JSON.stringify(defaultAssets));
+
+const savedAssets=
+Array.isArray(state.assets)
 ?state.assets
-:JSON.parse(JSON.stringify(defaultAssets));
+:[];
+
+savedAssets.forEach(savedAsset=>{
+
+if(!savedAsset||!savedAsset.id)return;
+
+const index=
+assets.findIndex(
+a=>a.id===savedAsset.id
+);
+
+if(index>=0){
+
+assets[index]={
+...assets[index],
+...savedAsset
+};
+
+}
+else{
+
+assets.push(savedAsset);
+
+}
+
+});
+
+
+/* =========================================================
+   DİĞER AYARLAR
+   ========================================================= */
 
 let selectedStart=100000;
 let activeCategory="Tümü";
-
 
 const goals=[
 250000,
@@ -1144,7 +1283,6 @@ const goals=[
 25000000,
 100000000
 ];
-
 
 const goalNames=[
 "İlk Yatırımcı",
@@ -1157,10 +1295,22 @@ const goalNames=[
 ];
 
 
+/* =========================================================
+   PARA
+   ========================================================= */
+
 function money(n){
-return "₺"+Math.round(Number(n)||0).toLocaleString("tr-TR");
+
+return "₺"+
+Math.round(Number(n)||0)
+.toLocaleString("tr-TR");
+
 }
 
+
+/* =========================================================
+   KAYDET
+   ========================================================= */
 
 function save(){
 
@@ -1173,6 +1323,10 @@ JSON.stringify(state)
 
 }
 
+
+/* =========================================================
+   BAŞLANGIÇ BAKİYESİ
+   ========================================================= */
 
 function selectStart(amount,button){
 
@@ -1198,17 +1352,18 @@ button.classList.add("selected");
 
 selectedStart=0;
 
-document.getElementById("customBalance")
-.classList.remove("hidden");
+const input=document.getElementById("customBalance");
 
-document.getElementById("customBalance").focus();
+input.classList.remove("hidden");
+input.focus();
 
 }
 
 
 function startBank(){
 
-const name=document.getElementById("usernameInput")
+const name=
+document.getElementById("usernameInput")
 .value.trim();
 
 if(!name){
@@ -1220,6 +1375,7 @@ state.language==="en"
 );
 
 return;
+
 }
 
 let balance=selectedStart;
@@ -1239,6 +1395,7 @@ state.language==="en"
 );
 
 return;
+
 }
 
 }
@@ -1246,14 +1403,27 @@ return;
 state.username=name;
 state.balance=balance;
 state.startBalance=balance;
+state.debt=0;
+state.creditScore=750;
+state.portfolio={};
+state.history=[];
+state.news=[];
 state.progress=0;
 state.goalIndex=0;
 state.completedGoals=[];
 
 save();
 
-document.getElementById("login").classList.add("hidden");
-document.getElementById("app").classList.remove("hidden");
+document.getElementById("login")
+.classList.add("hidden");
+
+document.getElementById("app")
+.classList.remove("hidden");
+
+document.body.classList.toggle(
+"dark",
+state.dark
+);
 
 update();
 
@@ -1270,6 +1440,10 @@ startNewsTimer();
 
 }
 
+
+/* =========================================================
+   PORTFÖY
+   ========================================================= */
 
 function portfolioValue(){
 
@@ -1292,18 +1466,30 @@ return sum+
 
 function totalWealth(){
 
-return Number(state.balance||0)+portfolioValue()-Number(state.debt||0);
+return Number(state.balance||0)
++
+portfolioValue()
+-
+Number(state.debt||0);
 
 }
 
 
+/* =========================================================
+   HEDEFLER
+   ========================================================= */
+
 function updateGoal(){
 
-let wealth=totalWealth();
+const wealth=totalWealth();
 
-let index=Number(state.goalIndex)||0;
+let index=
+Number(state.goalIndex)||0;
 
-while(index<goals.length&&wealth>=goals[index]){
+while(
+index<goals.length &&
+wealth>=goals[index]
+){
 
 if(!state.completedGoals.includes(index)){
 
@@ -1327,12 +1513,23 @@ index++;
 
 }
 
-state.goalIndex=Math.min(index,goals.length-1);
+state.goalIndex=
+Math.min(
+index,
+goals.length-1
+);
 
-const goal=goals[state.goalIndex]||goals[goals.length-1];
-const previous=state.goalIndex===0?0:goals[state.goalIndex-1];
+const goal=
+goals[state.goalIndex]||
+goals[goals.length-1];
+
+const previous=
+state.goalIndex===0
+?0
+:goals[state.goalIndex-1];
 
 const range=goal-previous;
+
 const progress=Math.min(
 100,
 Math.max(
@@ -1341,18 +1538,22 @@ Math.max(
 )
 );
 
-document.getElementById("goalName").textContent=
-money(goal);
+document.getElementById("goalName")
+.textContent=money(goal);
 
-document.getElementById("goalProgress").style.width=
-progress+"%";
+document.getElementById("goalProgress")
+.style.width=progress+"%";
 
 if(wealth>=goal){
 
-document.getElementById("goalRemaining").textContent=
-state.language==="en"?"Goal reached!":"Hedef tamamlandı!";
+document.getElementById("goalRemaining")
+.textContent=
+state.language==="en"
+?"Goal reached!"
+:"Hedef tamamlandı!";
 
-document.getElementById("goalText").textContent=
+document.getElementById("goalText")
+.textContent=
 state.language==="en"
 ?"Your next goal is waiting."
 :"Sıradaki hedef seni bekliyor.";
@@ -1362,19 +1563,27 @@ else{
 
 const remaining=goal-wealth;
 
-document.getElementById("goalRemaining").textContent=
+document.getElementById("goalRemaining")
+.textContent=
 money(remaining)+
 (state.language==="en"?" left":" kaldı");
 
-document.getElementById("goalText").textContent=
+document.getElementById("goalText")
+.textContent=
 state.language==="en"
 ?Math.round(progress)+"% complete"
 :Math.round(progress)+"% tamamlandı";
 
 }
 
+save();
+
 }
 
+
+/* =========================================================
+   KART
+   ========================================================= */
 
 function updateCard(){
 
@@ -1427,32 +1636,66 @@ tier.textContent=name;
 }
 
 
+/* =========================================================
+   ANA GÜNCELLEME
+   ========================================================= */
+
 function update(){
 
-document.getElementById("helloName").textContent=state.username;
-document.getElementById("cardName").textContent=state.username.toUpperCase();
-document.getElementById("profileName").textContent=state.username;
+document.getElementById("helloName")
+.textContent=state.username||"Kullanıcı";
 
-document.getElementById("balance").textContent=money(state.balance);
-document.getElementById("cardBalance").textContent=money(state.balance);
+document.getElementById("cardName")
+.textContent=
+(state.username||"KULLANICI")
+.toUpperCase();
+
+document.getElementById("profileName")
+.textContent=state.username||"Kullanıcı";
+
+document.getElementById("balance")
+.textContent=money(state.balance);
+
+document.getElementById("cardBalance")
+.textContent=money(state.balance);
 
 const pv=portfolioValue();
 
-document.getElementById("portfolioValue").textContent=money(pv);
-document.getElementById("portValue").textContent=money(pv);
-document.getElementById("marketBalance").textContent=money(state.balance);
+document.getElementById("portfolioValue")
+.textContent=money(pv);
 
-document.getElementById("debt").textContent=money(state.debt);
-document.getElementById("profileBalance").textContent=money(state.balance);
-document.getElementById("profilePortfolio").textContent=money(pv);
-document.getElementById("profileDebt").textContent=money(state.debt);
-document.getElementById("creditScore").textContent=state.creditScore;
+document.getElementById("portValue")
+.textContent=money(pv);
+
+document.getElementById("marketBalance")
+.textContent=money(state.balance);
+
+document.getElementById("debt")
+.textContent=money(state.debt);
+
+document.getElementById("profileBalance")
+.textContent=money(state.balance);
+
+document.getElementById("profilePortfolio")
+.textContent=money(pv);
+
+document.getElementById("profileDebt")
+.textContent=money(state.debt);
+
+document.getElementById("creditScore")
+.textContent=state.creditScore;
 
 const wealth=totalWealth();
+const profit=wealth-state.startBalance;
 
-document.getElementById("totalProfit").textContent=
-(wealth-state.startBalance>=0?"+":"")+
-money(wealth-state.startBalance);
+const profitElement=
+document.getElementById("totalProfit");
+
+profitElement.textContent=
+(profit>=0?"+":"")+money(profit);
+
+profitElement.className=
+profit>=0?"up":"down";
 
 updateGoal();
 updateCard();
@@ -1467,14 +1710,23 @@ applyLanguage();
 }
 
 
+/* =========================================================
+   HEDEF LİSTESİ
+   ========================================================= */
+
 function renderGoals(){
 
-const box=document.getElementById("profileGoals");
+const box=
+document.getElementById("profileGoals");
 
-box.innerHTML=goals.map((goal,i)=>{
+box.innerHTML=
+goals.map((goal,i)=>{
 
-const completed=state.completedGoals.includes(i);
-const previous=i===0?0:goals[i-1];
+const completed=
+state.completedGoals.includes(i);
+
+const previous=
+i===0?0:goals[i-1];
 
 const progress=completed
 ?100
@@ -1482,7 +1734,8 @@ const progress=completed
 100,
 Math.max(
 0,
-((totalWealth()-previous)/(goal-previous))*100
+((totalWealth()-previous)/
+(goal-previous))*100
 )
 );
 
@@ -1493,6 +1746,7 @@ return `
 <div class="goalTop">
 
 <div>
+
 <div class="goalName">
 ${completed?"✓ ":""}${goalNames[i]}
 </div>
@@ -1500,6 +1754,7 @@ ${completed?"✓ ":""}${goalNames[i]}
 <div class="goalText">
 ${money(goal)}
 </div>
+
 </div>
 
 <div class="goalAmount">
@@ -1523,17 +1778,25 @@ ${completed
 }
 
 
+/* =========================================================
+   SAYFA
+   ========================================================= */
+
 function showPage(page,button){
 
 document.querySelectorAll("main")
 .forEach(x=>x.classList.add("hidden"));
 
-document.getElementById(page).classList.remove("hidden");
+const target=document.getElementById(page);
+
+if(target)
+target.classList.remove("hidden");
 
 document.querySelectorAll(".nav")
 .forEach(x=>x.classList.remove("active"));
 
-if(button)button.classList.add("active");
+if(button)
+button.classList.add("active");
 
 update();
 
@@ -1560,6 +1823,10 @@ document.querySelectorAll(".nav")[3]
 }
 
 
+/* =========================================================
+   VARLIK FİLTRE
+   ========================================================= */
+
 function filterAssets(category,button){
 
 activeCategory=category;
@@ -1574,32 +1841,53 @@ renderAssets();
 }
 
 
+/* =========================================================
+   PİYASA
+   ========================================================= */
+
 function renderAssets(){
 
-const box=document.getElementById("assets");
+const box=
+document.getElementById("assets");
+
+if(!box)return;
 
 let list=assets;
 
-if(activeCategory!=="Tümü")
-list=assets.filter(x=>x.type===activeCategory);
+if(activeCategory!=="Tümü"){
+
+list=
+assets.filter(
+x=>x.type===activeCategory
+);
+
+}
 
 box.innerHTML="";
 
 list.forEach(a=>{
 
-const cls=a.change>=0?"up":"down";
+const change=
+Number(a.change)||0;
+
+const cls=
+change>=0?"up":"down";
 
 box.innerHTML+=`
 
 <div class="card asset">
 
-<div class="assetIcon">${a.icon}</div>
+<div class="assetIcon">
+${a.icon}
+</div>
 
 <div class="assetInfo">
 
 <strong>${a.id}</strong>
 
-<span>${a.name} · ${a.type}</span>
+<span>
+${a.name} · ${a.type}
+</span>
 
 </div>
 
@@ -1608,12 +1896,13 @@ box.innerHTML+=`
 <strong>${money(a.price)}</strong>
 
 <span class="${cls}">
-${a.change>=0?"+":""}${a.change.toFixed(2)}%
+${change>=0?"+":""}${change.toFixed(2)}%
 </span>
 
 </div>
 
-<button class="iconbtn" onclick="trade('${a.id}')">
+<button class="iconbtn"
+onclick="trade('${a.id}')">
 ↔
 </button>
 
@@ -1626,47 +1915,68 @@ ${a.change>=0?"+":""}${a.change.toFixed(2)}%
 }
 
 
-/* YENİ: EKSİK OLAN FONKSİYON */
+/* =========================================================
+   PORTFÖY GÖSTER
+   ========================================================= */
 
 function renderHoldings(){
 
-const box=document.getElementById("holdings");
+const box=
+document.getElementById("holdings");
 
 if(!box)return;
 
-const entries=Object.entries(state.portfolio||{})
-.filter(([id,h])=>h&&Number(h.qty)>0);
+const entries=
+Object.entries(state.portfolio||{})
+.filter(
+([id,h])=>h&&Number(h.qty)>0
+);
 
 if(!entries.length){
 
 box.innerHTML=`
+
 <div class="card muted">
+
 ${
 state.language==="en"
 ?"You don't have any investments yet."
 :"Henüz yatırımın yok."
 }
+
 </div>
+
 `;
 
-document.getElementById("portProfit").textContent="";
+document.getElementById("portProfit")
+.textContent="";
 
 return;
+
 }
 
 let totalInvested=0;
 let totalValue=0;
 
-box.innerHTML=entries.map(([id,h])=>{
+box.innerHTML=
+entries.map(([id,h])=>{
 
-const a=assets.find(x=>x.id===id);
+const a=
+assets.find(x=>x.id===id);
 
 if(!a)return "";
 
-const qty=Number(h.qty)||0;
-const invested=Number(h.invested)||0;
-const value=qty*a.price;
-const profit=value-invested;
+const qty=
+Number(h.qty)||0;
+
+const invested=
+Number(h.invested)||0;
+
+const value=
+qty*a.price;
+
+const profit=
+value-invested;
 
 totalInvested+=invested;
 totalValue+=value;
@@ -1684,9 +1994,8 @@ ${a.icon}
 <strong>${a.id}</strong>
 
 <span>
-${a.name} · ${qty} ${
-state.language==="en"?"units":"adet"
-}
+${a.name} · ${qty}
+${state.language==="en"?"units":"adet"}
 </span>
 
 </div>
@@ -1707,38 +2016,55 @@ ${profit>=0?"+":""}${money(profit)}
 
 }).join("");
 
-const totalProfit=totalValue-totalInvested;
+const totalProfit=
+totalValue-totalInvested;
 
-const profitBox=document.getElementById("portProfit");
+const profitBox=
+document.getElementById("portProfit");
 
-profitBox.className=totalProfit>=0?"up":"down";
+profitBox.className=
+totalProfit>=0?"up":"down";
 
 profitBox.textContent=
-(totalProfit>=0?"+":"")+money(totalProfit);
+(totalProfit>=0?"+":"")+
+money(totalProfit);
 
 }
 
 
+/* =========================================================
+   ALIM SATIM
+   ========================================================= */
+
 function trade(id){
 
-const a=assets.find(x=>x.id===id);
+const a=
+assets.find(x=>x.id===id);
+
+if(!a)return;
 
 openModal(`
 
 <h2>${a.icon} ${a.name}</h2>
 
-<p class="muted">${a.id} · ${a.type}</p>
+<p class="muted">
+${a.id} · ${a.type}
+</p>
 
 <div class="card">
 
 <div class="balanceLabel">
-${state.language==="en"?"Current price":"Güncel fiyat"}
+${state.language==="en"
+?"Current price"
+:"Güncel fiyat"}
 </div>
 
-<div class="balance">${money(a.price)}</div>
+<div class="balance">
+${money(a.price)}
+</div>
 
 <span class="${a.change>=0?"up":"down"}">
-${a.change>=0?"+":""}${a.change.toFixed(2)}%
+${a.change>=0?"+":""}${Number(a.change||0).toFixed(2)}%
 </span>
 
 </div>
@@ -1763,11 +2089,17 @@ ${state.language==="en"?"Sell":"Sat"}
 ${state.language==="en"?"Quantity":"Adet"}
 </label>
 
-<input id="tradeQty" type="number" min="1" value="1">
+<input
+id="tradeQty"
+type="number"
+min="1"
+step="1"
+value="1">
 
 <br><br>
 
-<button class="action" onclick="executeTrade('${id}')">
+<button class="action"
+onclick="executeTrade('${id}')">
 
 ${state.language==="en"
 ?"Execute"
@@ -1782,9 +2114,13 @@ ${state.language==="en"
 
 function executeTrade(id){
 
-const a=assets.find(x=>x.id===id);
+const a=
+assets.find(x=>x.id===id);
 
-const side=document.getElementById("tradeSide").value;
+if(!a)return;
+
+const side=
+document.getElementById("tradeSide").value;
 
 const qty=Math.floor(
 Number(document.getElementById("tradeQty").value)
@@ -1799,6 +2135,7 @@ state.language==="en"
 );
 
 return;
+
 }
 
 const total=a.price*qty;
@@ -1814,25 +2151,35 @@ state.language==="en"
 );
 
 return;
+
 }
 
 state.balance-=total;
 
-if(!state.portfolio[id])
-state.portfolio[id]={qty:0,invested:0};
+if(!state.portfolio[id]){
+
+state.portfolio[id]={
+qty:0,
+invested:0
+};
+
+}
 
 state.portfolio[id].qty+=qty;
 state.portfolio[id].invested+=total;
 
-state.progress+=Math.min(
+state.progress+=
+Math.min(
 total*0.01,
 5000
 );
 
 state.history.unshift({
+
 date:new Date().toLocaleString(),
 text:`${qty} ${id} satın alındı`,
 amount:-total
+
 });
 
 showToast(
@@ -1843,7 +2190,8 @@ showToast(
 }
 else{
 
-const h=state.portfolio[id];
+const h=
+state.portfolio[id];
 
 if(!h||h.qty<qty){
 
@@ -1854,11 +2202,17 @@ state.language==="en"
 );
 
 return;
+
 }
 
-const average=h.invested/h.qty;
-const cost=average*qty;
-const profit=total-cost;
+const average=
+h.invested/h.qty;
+
+const cost=
+average*qty;
+
+const profit=
+total-cost;
 
 h.qty-=qty;
 h.invested-=cost;
@@ -1868,12 +2222,15 @@ state.balance+=total;
 if(h.qty<=0)
 delete state.portfolio[id];
 
-state.progress+=Math.max(0,profit);
+state.progress+=
+Math.max(0,profit);
 
 state.history.unshift({
+
 date:new Date().toLocaleString(),
 text:`${qty} ${id} satıldı`,
 amount:profit
+
 });
 
 showToast(
@@ -1889,91 +2246,39 @@ update();
 
 }
 
-const defaultAssets=[
 
-{id:"THYAO",name:"Türk Hava Yolları",type:"Hisse",icon:"✈️",price:320,change:0},
-{id:"GARAN",name:"Garanti BBVA",type:"Hisse",icon:"🏦",price:145,change:0},
-{id:"ISCTR",name:"Türkiye İş Bankası C",type:"Hisse",icon:"🏦",price:102,change:0},
-{id:"ASELS",name:"ASELSAN",type:"Hisse",icon:"🛡️",price:185,change:0},
-{id:"SISE",name:"Şişecam",type:"Hisse",icon:"🏭",price:48,change:0},
-{id:"TUPRS",name:"Tüpraş",type:"Hisse",icon:"⛽",price:175,change:0},
-{id:"BIMAS",name:"BİM",type:"Hisse",icon:"🛒",price:540,change:0},
-{id:"FROTO",name:"Ford Otosan",type:"Hisse",icon:"🚗",price:1120,change:0},
-{id:"EREGL",name:"Ereğli Demir Çelik",type:"Hisse",icon:"⚙️",price:55,change:0},
-{id:"KCHOL",name:"Koç Holding",type:"Hisse",icon:"🏢",price:210,change:0},
-{id:"SAHOL",name:"Sabancı Holding",type:"Hisse",icon:"🏙️",price:110,change:0},
-{id:"TCELL",name:"Turkcell",type:"Hisse",icon:"📱",price:115,change:0},
-{id:"AKBNK",name:"Akbank",type:"Hisse",icon:"🏦",price:72,change:0},
-{id:"YKBNK",name:"Yapı Kredi",type:"Hisse",icon:"🏦",price:38,change:0},
-{id:"TOASO",name:"Tofaş",type:"Hisse",icon:"🚘",price:285,change:0},
-{id:"PETKM",name:"Petkim",type:"Hisse",icon:"🧪",price:25,change:0},
-
-{id:"MGROS",name:"Migros",type:"Hisse",icon:"🛒",price:610,change:0},
-{id:"ULKER",name:"Ülker Bisküvi",type:"Hisse",icon:"🍫",price:125,change:0},
-{id:"KOZAL",name:"Koza Altın",type:"Hisse",icon:"🥇",price:92,change:0},
-{id:"ENKAI",name:"Enka İnşaat",type:"Hisse",icon:"🏗️",price:68,change:0},
-{id:"TTKOM",name:"Türk Telekom",type:"Hisse",icon:"☎️",price:62,change:0},
-{id:"CCOLA",name:"Coca-Cola İçecek",type:"Hisse",icon:"🥤",price:780,change:0},
-{id:"DOAS",name:"Doğuş Otomotiv",type:"Hisse",icon:"🚙",price:245,change:0},
-{id:"PGSUS",name:"Pegasus",type:"Hisse",icon:"✈️",price:310,change:0},
-{id:"KRDMD",name:"Kardemir D",type:"Hisse",icon:"🏭",price:32,change:0},
-{id:"OYAKC",name:"OYAK Çimento",type:"Hisse",icon:"🏗️",price:72,change:0},
-{id:"EKGYO",name:"Emlak Konut GYO",type:"Hisse",icon:"🏠",price:18,change:0},
-{id:"ASTOR",name:"Astor Enerji",type:"Hisse",icon:"⚡",price:145,change:0},
-{id:"TAVHL",name:"TAV Havalimanları",type:"Hisse",icon:"🛫",price:265,change:0},
-{id:"BRSAN",name:"Borusan Boru",type:"Hisse",icon:"🔩",price:420,change:0},
-
-{id:"BTC",name:"Bitcoin",type:"Kripto",icon:"₿",price:3850000,change:0},
-{id:"ETH",name:"Ethereum",type:"Kripto",icon:"◆",price:145000,change:0},
-{id:"SOL",name:"Solana",type:"Kripto",icon:"◎",price:6200,change:0},
-{id:"BNB",name:"BNB",type:"Kripto",icon:"◆",price:36000,change:0},
-{id:"XRP",name:"XRP",type:"Kripto",icon:"✕",price:120,change:0},
-{id:"ADA",name:"Cardano",type:"Kripto",icon:"●",price:28,change:0},
-{id:"DOGE",name:"Dogecoin",type:"Kripto",icon:"Ð",price:7.5,change:0},
-
-{id:"AVAX",name:"Avalanche",type:"Kripto",icon:"🔺",price:1100,change:0},
-{id:"LINK",name:"Chainlink",type:"Kripto",icon:"🔗",price:720,change:0},
-{id:"DOT",name:"Polkadot",type:"Kripto",icon:"●",price:210,change:0},
-{id:"LTC",name:"Litecoin",type:"Kripto",icon:"Ł",price:3200,change:0},
-{id:"TRX",name:"TRON",type:"Kripto",icon:"🔴",price:12,change:0},
-{id:"SHIB",name:"Shiba Inu",type:"Kripto",icon:"🐕",price:0.00045,change:0},
-{id:"ATOM",name:"Cosmos",type:"Kripto",icon:"⚛️",price:260,change:0},
-{id:"UNI",name:"Uniswap",type:"Kripto",icon:"🦄",price:480,change:0},
-{id:"NEAR",name:"NEAR Protocol",type:"Kripto",icon:"◉",price:180,change:0},
-{id:"APT",name:"Aptos",type:"Kripto",icon:"🔷",price:310,change:0},
-
-{id:"ALTIN",name:"Altın",type:"Metal",icon:"🥇",price:4850,change:0},
-{id:"GUMUS",name:"Gümüş",type:"Metal",icon:"⚪",price:62,change:0},
-{id:"PLATIN",name:"Platin",type:"Metal",icon:"◈",price:72000,change:0},
-{id:"PALADYUM",name:"Paladyum",type:"Metal",icon:"◇",price:41000,change:0},
-
-{id:"BAKIR",name:"Bakır",type:"Emtia",icon:"🟤",price:410,change:0},
-{id:"PETROL",name:"Petrol",type:"Emtia",icon:"🛢️",price:2700,change:0},
-{id:"DOGALGAZ",name:"Doğal Gaz",type:"Emtia",icon:"🔥",price:145,change:0}
-
-];
-
+/* =========================================================
+   HABER ÜRET
+   ========================================================= */
 
 function generateNews(){
 
+if(!newsTemplates.length)return;
+
 const n=
 newsTemplates[
-Math.floor(Math.random()*newsTemplates.length)
+Math.floor(
+Math.random()*newsTemplates.length
+)
 ];
 
 n.targets.forEach(id=>{
 
-const a=assets.find(x=>x.id===id);
+const a=
+assets.find(x=>x.id===id);
 
 if(!a)return;
 
-const base=Math.random()*1.5+.25;
+const base=
+Math.random()*1.5+0.25;
 
-const move=base*n.impact;
+const move=
+base*n.impact;
 
 a.price=Math.max(
-.01,
-a.price*(1+move/100)
+0.01,
+Number(a.price||0)*
+(1+move/100)
 );
 
 a.change=move;
@@ -1987,8 +2292,11 @@ enTitle:n.enTitle,
 text:n.text,
 enText:n.enText,
 impact:n.impact,
+
 time:new Date().toLocaleTimeString(
-state.language==="en"?"en-US":"tr-TR",
+state.language==="en"
+?"en-US"
+:"tr-TR",
 {
 hour:"2-digit",
 minute:"2-digit"
@@ -2003,10 +2311,13 @@ state.news.pop();
 save();
 update();
 
-if(Math.random()<.35){
+if(Math.random()<0.35){
 
 showToast(
-n.impact>0?"📈 Piyasa hareketi":"📉 Piyasa düşüşü",
+n.impact>0
+?"📈 Piyasa hareketi"
+:"📉 Piyasa düşüşü",
+
 state.language==="en"
 ?(n.enTitle||n.title)
 :n.title
@@ -2017,12 +2328,22 @@ state.language==="en"
 }
 
 
+/* =========================================================
+   HABERLERİ GÖSTER
+   ========================================================= */
+
 function renderNews(){
 
-const latest=document.getElementById("latestNews");
-const list=document.getElementById("newsList");
+const latest=
+document.getElementById("latestNews");
 
-const isEN=state.language==="en";
+const list=
+document.getElementById("newsList");
+
+if(!latest||!list)return;
+
+const isEN=
+state.language==="en";
 
 if(!state.news.length){
 
@@ -2039,12 +2360,21 @@ ${isEN
 </div>`;
 
 return;
+
 }
 
-const html=state.news.map(n=>{
+const html=
+state.news.map(n=>{
 
-const title=isEN?(n.enTitle||n.title):n.title;
-const text=isEN?(n.enText||n.text):n.text;
+const title=
+isEN
+?(n.enTitle||n.title)
+:n.title;
+
+const text=
+isEN
+?(n.enText||n.text)
+:n.text;
 
 const impactText=
 n.impact>0
@@ -2058,9 +2388,13 @@ return `
 <div class="card news
 ${n.impact>0?"good":n.impact<0?"bad":""}">
 
-<div class="newsTitle">${title}</div>
+<div class="newsTitle">
+${title}
+</div>
 
-<div class="newsText">${text}</div>
+<div class="newsText">
+${text}
+</div>
 
 <div class="small" style="margin-top:9px">
 ${n.time} · ${impactText}
@@ -2075,27 +2409,45 @@ ${n.time} · ${impactText}
 list.innerHTML=html;
 
 latest.innerHTML=
-state.news.slice(0,2).map(n=>{
+state.news.slice(0,2)
+.map(n=>{
 
-const title=isEN?(n.enTitle||n.title):n.title;
-const text=isEN?(n.enText||n.text):n.text;
+const title=
+isEN
+?(n.enTitle||n.title)
+:n.title;
+
+const text=
+isEN
+?(n.enText||n.text)
+:n.text;
 
 return `
 
 <div class="card news
 ${n.impact>0?"good":n.impact<0?"bad":""}">
 
-<div class="newsTitle">${title}</div>
-<div class="newsText">${text}</div>
+<div class="newsTitle">
+${title}
+</div>
+
+<div class="newsText">
+${text}
+</div>
 
 </div>
 
 `;
 
-}).join("");
+})
+.join("");
 
 }
 
+
+/* =========================================================
+   KREDİ
+   ========================================================= */
 
 function openLoan(){
 
@@ -2118,17 +2470,24 @@ state.language==="en"
 <div class="card">
 
 <div class="balanceLabel">
-${state.language==="en"?"Credit score":"Kredi puanı"}
+${state.language==="en"
+?"Credit score"
+:"Kredi puanı"}
 </div>
 
-<div class="balance">${state.creditScore}</div>
+<div class="balance">
+${state.creditScore}
+</div>
 
 <div class="progress">
 
 <i style="
 width:${Math.min(
 100,
+Math.max(
+0,
 (state.creditScore-300)/550*100
+)
 )}%">
 </i>
 
@@ -2137,18 +2496,28 @@ width:${Math.min(
 </div>
 
 <p>
-${state.language==="en"?"Current debt":"Mevcut borç"}:
+${state.language==="en"
+?"Current debt"
+:"Mevcut borç"}:
 <b>${money(state.debt)}</b>
 </p>
 
 <label>
-${state.language==="en"?"Loan amount":"Kredi tutarı"}
+${state.language==="en"
+?"Loan amount"
+:"Kredi tutarı"}
 </label>
 
-<input id="loanAmount" type="number" value="25000" min="1000">
+<input
+id="loanAmount"
+type="number"
+value="25000"
+min="1000">
 
 <label>
-${state.language==="en"?"Term":"Vade"}
+${state.language==="en"
+?"Term"
+:"Vade"}
 </label>
 
 <select id="loanTerm">
@@ -2162,8 +2531,13 @@ ${state.language==="en"?"Term":"Vade"}
 
 <br><br>
 
-<button class="action" onclick="takeLoan()">
-${state.language==="en"?"Take Loan":"Krediyi Çek"}
+<button class="action"
+onclick="takeLoan()">
+
+${state.language==="en"
+?"Take Loan"
+:"Krediyi Çek"}
+
 </button>
 
 `);
@@ -2173,11 +2547,13 @@ ${state.language==="en"?"Take Loan":"Krediyi Çek"}
 
 function takeLoan(){
 
-const amount=Number(
+const amount=
+Number(
 document.getElementById("loanAmount").value
 );
 
-const term=Number(
+const term=
+Number(
 document.getElementById("loanTerm").value
 );
 
@@ -2190,9 +2566,10 @@ state.language==="en"
 );
 
 return;
+
 }
 
-if(state.debt>500000){
+if(state.debt+amount>500000){
 
 alert(
 state.language==="en"
@@ -2201,6 +2578,7 @@ state.language==="en"
 );
 
 return;
+
 }
 
 const interest=.032;
@@ -2216,12 +2594,15 @@ state.balance+=amount;
 state.debt+=total;
 
 state.history.unshift({
+
 date:new Date().toLocaleString(),
 text:`${money(amount)} kredi çekildi`,
 amount:amount
+
 });
 
-state.creditScore-=Math.min(
+state.creditScore-=
+Math.min(
 40,
 Math.round(amount/10000)
 );
@@ -2237,6 +2618,10 @@ showToast(
 
 }
 
+
+/* =========================================================
+   HIZLI MOD
+   ========================================================= */
 
 function openQuickMode(){
 
@@ -2259,7 +2644,9 @@ state.language==="en"
 <div class="card">
 
 <div class="balanceLabel">
-${state.language==="en"?"Status":"Durum"}
+${state.language==="en"
+?"Status"
+:"Durum"}
 </div>
 
 <div class="balance">
@@ -2274,7 +2661,8 @@ state.quickMode
 
 </div>
 
-<button class="action" onclick="toggleQuickMode()">
+<button class="action"
+onclick="toggleQuickMode()">
 
 ${
 state.quickMode
@@ -2293,8 +2681,6 @@ state.quickMode
 }
 
 
-/* DÜZELTİLDİ: HIZLI MOD TIMER'I BURADA YENİLENİYOR */
-
 function toggleQuickMode(){
 
 state.quickMode=!state.quickMode;
@@ -2307,7 +2693,10 @@ closeModal();
 update();
 
 showToast(
-state.quickMode?"⚡ Hızlı Mod":"Hızlı Mod kapandı",
+state.quickMode
+?"⚡ Hızlı Mod"
+:"Hızlı Mod kapandı",
+
 state.quickMode
 ?"Piyasalar hızlandı."
 :"Piyasalar normale döndü."
@@ -2315,6 +2704,10 @@ state.quickMode
 
 }
 
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
 
 function toggleDark(){
 
@@ -2329,6 +2722,10 @@ save();
 
 }
 
+
+/* =========================================================
+   DİL
+   ========================================================= */
 
 function setLanguage(lang){
 
@@ -2349,7 +2746,9 @@ translations[state.language]||
 translations.tr;
 
 document.documentElement.lang=
-state.language==="en"?"en":"tr";
+state.language==="en"
+?"en"
+:"tr";
 
 document.querySelectorAll("[data-i18n]")
 .forEach(el=>{
@@ -2361,19 +2760,32 @@ el.textContent=lang[key];
 
 });
 
-document.getElementById("trBtn")
-.classList.toggle(
+const trBtn=
+document.getElementById("trBtn");
+
+const enBtn=
+document.getElementById("enBtn");
+
+if(trBtn){
+
+trBtn.classList.toggle(
 "active",
 state.language==="tr"
 );
 
-document.getElementById("enBtn")
-.classList.toggle(
+}
+
+if(enBtn){
+
+enBtn.classList.toggle(
 "active",
 state.language==="en"
 );
 
-const custom=document.getElementById("customBalance");
+}
+
+const custom=
+document.getElementById("customBalance");
 
 if(custom){
 
@@ -2396,14 +2808,43 @@ state.language==="en"
 
 }
 
-document.querySelector('[data-category="all"]').textContent=lang.allCat;
-document.querySelector('[data-category="stock"]').textContent=lang.stocks;
-document.querySelector('[data-category="crypto"]').textContent=lang.crypto;
-document.querySelector('[data-category="metal"]').textContent=lang.metals;
-document.querySelector('[data-category="commodity"]').textContent=lang.commodity;
+const all=
+document.querySelector(
+'[data-category="all"]'
+);
+
+const stock=
+document.querySelector(
+'[data-category="stock"]'
+);
+
+const crypto=
+document.querySelector(
+'[data-category="crypto"]'
+);
+
+const metal=
+document.querySelector(
+'[data-category="metal"]'
+);
+
+const commodity=
+document.querySelector(
+'[data-category="commodity"]'
+);
+
+if(all)all.textContent=lang.allCat;
+if(stock)stock.textContent=lang.stocks;
+if(crypto)crypto.textContent=lang.crypto;
+if(metal)metal.textContent=lang.metals;
+if(commodity)commodity.textContent=lang.commodity;
 
 }
 
+
+/* =========================================================
+   MODAL
+   ========================================================= */
 
 function openModal(content){
 
@@ -2424,9 +2865,14 @@ document.getElementById("modal")
 }
 
 
+/* =========================================================
+   TOAST
+   ========================================================= */
+
 function showToast(title,text){
 
-const toast=document.getElementById("toast");
+const toast=
+document.getElementById("toast");
 
 toast.innerHTML=
 `${title}<small>${text}</small>`;
@@ -2435,7 +2881,8 @@ toast.classList.add("show");
 
 clearTimeout(window.toastTimer);
 
-window.toastTimer=setTimeout(
+window.toastTimer=
+setTimeout(
 ()=>{
 toast.classList.remove("show");
 },
@@ -2445,13 +2892,21 @@ toast.classList.remove("show");
 }
 
 
+/* =========================================================
+   SIFIRLA
+   ========================================================= */
+
 function resetGame(){
 
 const message=
 state.language==="en"
+
 ?
+
 "WARNING!\n\nYour entire PocketBank account will be deleted.\n\nContinue?"
+
 :
+
 "DİKKAT!\n\nPocketBank hesabın tamamen sıfırlanacak.\n\nDevam etmek istiyor musun?";
 
 if(!window.confirm(message))
@@ -2460,8 +2915,14 @@ return;
 try{
 
 localStorage.removeItem("pocketbank");
-
 sessionStorage.clear();
+
+if(newsTimer){
+
+clearInterval(newsTimer);
+newsTimer=null;
+
+}
 
 location.reload();
 
@@ -2481,7 +2942,9 @@ state.language==="en"
 }
 
 
-/* HABER TIMER SİSTEMİ */
+/* =========================================================
+   HABER TIMER
+   ========================================================= */
 
 let newsTimer=null;
 
@@ -2490,16 +2953,17 @@ function startNewsTimer(){
 if(newsTimer){
 
 clearInterval(newsTimer);
-
 newsTimer=null;
 
 }
 
-const delay=state.quickMode
+const delay=
+state.quickMode
 ?5000
 :12000;
 
-newsTimer=setInterval(
+newsTimer=
+setInterval(
 generateNews,
 delay
 );
@@ -2507,7 +2971,14 @@ delay
 }
 
 
-/* UYGULAMA AÇILIRKEN */
+/* =========================================================
+   UYGULAMA BAŞLANGICI
+   ========================================================= */
+
+document.body.classList.toggle(
+"dark",
+!!state.dark
+);
 
 if(state.username){
 
@@ -2517,11 +2988,6 @@ document.getElementById("login")
 document.getElementById("app")
 .classList.remove("hidden");
 
-document.body.classList.toggle(
-"dark",
-state.dark
-);
-
 update();
 
 startNewsTimer();
@@ -2529,15 +2995,22 @@ startNewsTimer();
 }
 
 
-/* İLK HABER */
+/* =========================================================
+   İLK HABER
+   ========================================================= */
 
-if(state.username&&!state.news.length){
+if(
+state.username &&
+(!Array.isArray(state.news)||!state.news.length)
+){
 
 setTimeout(
 ()=>{
 generateNews();
 },
-state.quickMode?1500:3000
+state.quickMode
+?1500
+:3000
 );
 
 }
